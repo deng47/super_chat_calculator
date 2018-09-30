@@ -34,11 +34,11 @@ while continuation:
     html = session.get(next_link, headers=headers).text
     try:
         for each in json.loads(html)['response']["continuationContents"]["liveChatContinuation"]["actions"]:
-            if 'addLiveChatTickerItemAction' in each["replayChatItemAction"]["actions"][0]:
-                raw_info = each["replayChatItemAction"]["actions"][0]["addLiveChatTickerItemAction"]['item']['liveChatTickerPaidMessageItemRenderer']
+            if "addChatItemAction" in each["replayChatItemAction"]["actions"][0] and 'liveChatPaidMessageRenderer' in  each["replayChatItemAction"]["actions"][0]["addChatItemAction"]['item']:
+                raw_info = each["replayChatItemAction"]["actions"][0]["addChatItemAction"]['item']['liveChatPaidMessageRenderer']
 
-                supporter = raw_info['showItemEndpoint']['showLiveChatItemEndpoint']['renderer']['liveChatPaidMessageRenderer']['authorName']['simpleText']
-                amount = raw_info['amount']['simpleText']
+                supporter = raw_info['authorName']['simpleText']
+                amount = raw_info['purchaseAmountText']['simpleText']
                 print(supporter, amount)
                 money = str_to_money(amount)
                 currency = [key for key in money.keys()][0]
