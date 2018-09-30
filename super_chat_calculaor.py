@@ -4,7 +4,6 @@
 import requests
 import re
 import json
-from bs4 import BeautifulSoup
 
 def str_to_money(str):
     str = str.replace(',','')
