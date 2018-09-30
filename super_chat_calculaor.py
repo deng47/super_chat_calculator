@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- encoding: utf-8
 
+'''
+Author: Siqi Deng, deng47@gmail.com
+Version: 1.0 09/30/2018
+'''
+
+
 import requests
 import re
 import json
