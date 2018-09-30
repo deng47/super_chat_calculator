@@ -1,13 +1,13 @@
 ## Super_Chat_Calculator
   A command line tool that calculates the amount of Super Chat people spent during a live broadcast.
 
-## Requirement:**
+## Requirement:
   - python3
   - requests
   - bs4
 
 
-## Usage: ./super_chat_calculator
+## Usage:   ./super_chat_calculator
   - Input: a Youtube video link
   - Output: Super Chat records and the total amount
 
